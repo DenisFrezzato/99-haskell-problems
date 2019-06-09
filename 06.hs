@@ -2,15 +2,15 @@
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome [] = True
 isPalindrome [_] = True
-isPalindrome (head:xs) = if head == (last xs) then isPalindrome $ init xs else False
+isPalindrome (head:xs) = if head == last xs then isPalindrome $ init xs else False
 
 isPalindrome' :: (Eq a) => [a] -> Bool
-isPalindrome' xs = xs == (reverse xs)
+isPalindrome' xs = xs == reverse xs
 
 isPalindrome'' :: (Eq a) => [a] -> Bool
 isPalindrome'' xs = foldl (\acc t -> acc && eqT t) True zipped
     where
-        halfLength = (length xs) `div` 2
+        halfLength = length xs `div` 2
         firstHalf = take halfLength xs
         secondHalf = reverse $ drop halfLength xs
         zipped = zip firstHalf secondHalf

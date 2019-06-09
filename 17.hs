@@ -4,6 +4,6 @@ split :: [a] -> Integer -> ([a], [a])
 split xs l = inner xs l []
     where
         inner [] _ acc = (acc, [])
-        inner (xs'@(x:xs)) l init
+        inner xs'@(x:xs) l init
             | l == 0 = (init, xs')
             | otherwise = inner xs (l - 1) (init ++ [x])

@@ -8,7 +8,7 @@ data Encoded a = Multiple Int a | Single a deriving (Show)
 encodeDirect :: (Eq a) => [a] -> [Encoded a]
 encodeDirect = foldr encodeDirect' []
     where 
-        encodeDirect' x [] = [(Single x)]
+        encodeDirect' x [] = [Single x]
         encodeDirect' x (encodedY@(Single y):ys)
             | x == y = (Multiple 2 x):ys
             | otherwise = (Single x):encodedY:ys
