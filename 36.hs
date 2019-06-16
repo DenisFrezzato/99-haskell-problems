@@ -5,6 +5,7 @@ import Data.List
 primeFactorsMult :: Int -> [(Int, Int)]
 primeFactorsMult = map (\fs -> (head fs, length fs)) . group . primeFactors
 
+-- From 35.
 primeFactors :: Int -> [Int]
 primeFactors x = primeFactors' x primeNumbers 
     where
@@ -15,6 +16,7 @@ primeFactors x = primeFactors' x primeNumbers
                 then p : primeFactors' (x `div` p) (p:ps) 
                 else primeFactors' x ps 
 
+-- From 31.
 isPrime :: Int -> Bool
 isPrime x = not $ hasFactor x 2
     where

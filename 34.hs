@@ -6,5 +6,6 @@ import Data.List
 totient :: Int -> Int
 totient m = length [x | x <- [1..m - 1], coprime x m]
 
+-- From 33.
 coprime :: Int -> Int -> Bool
 coprime x y = gcd x y == 1

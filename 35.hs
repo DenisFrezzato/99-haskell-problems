@@ -12,6 +12,7 @@ primeFactors x = primeFactors' x primeNumbers
                 then p : primeFactors' (x `div` p) (p:ps) 
                 else primeFactors' x ps 
 
+-- From 31.
 isPrime :: Int -> Bool
 isPrime x = not $ hasFactor x 2
     where
